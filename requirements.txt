@@ -1,0 +1,12 @@
+json
+queue
+googletrans==3.1.0a0
+sounddevice
+vosk
+scikit-learn
+pyttsx3
+webbrowser
+openai
+pyautogui
+pyjokes
+requests
