@@ -17,13 +17,10 @@ def browser():
     webbrowser.open('https://www.youtube.com', new=2)
 
 
-def ask():
-    o = input("Введите свой вопрос:\n")
-    question(o)
-
 
 def question(a):
-    openai.api_key = "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"
+    print("Спрашиваю у chatGPT")
+    openai.api_key = "your API key"
     model_engine = "text-davinci-003"
     prompt = a
 
@@ -39,6 +36,7 @@ def question(a):
         presence_penalty=0
     )
     voice.speaker(completion.choices[0].text)
+    
 
 
 def date():
@@ -71,7 +69,7 @@ def joke():
         t = translator.translate(text, dest="ru")
         voice.speaker(t.text)
     except Exception as e:
-        print(f"Translation error: {e}")
+        print(f"Ошибка перевода: {e}")
 
 
 def screenshot():
@@ -86,7 +84,7 @@ def screenshot():
 
 
 def vrema():
-    Time = datetime.datetime.now().strftime("%H:%M:%S")
+    Time = datetime.datetime.now().strftime("%H:%M")
     voice.speaker("сейчас")
     voice.speaker(Time)
 
@@ -104,7 +102,7 @@ def sleep():
 
 
 def weather():
-    api_key = "c7213dc996eda62a7a6b9192234ff8a5"
+    api_key = "your API key"
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
     complete_url = base_url + "appid=" + api_key + "&q=" + "Astana"
     response = requests.get(complete_url)
