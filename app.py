@@ -46,9 +46,13 @@ def recognize(data, v, clf):
 
     # озвучка ответа из модели data_set
     voice.speaker(answer.replace(func_name, ''))
-
-    # запуск функции из skills
-    exec(func_name + '()')
+    # оптимизация работы с openAI API
+    if func_name == "question":
+        question_ = data.replace(list(trg)[0], '')
+        question(question_)
+    else:
+        # запуск функции из skills
+        exec(func_name + '()')
 
 
 def main():
@@ -81,3 +85,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
