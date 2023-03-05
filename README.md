@@ -37,7 +37,7 @@ To use Jarvis, you need to follow these steps:
    pip install -r requirements.txt
 </pre>
 
-3. download a <a href="https://alphacephei.com/vosk/models">language model</a> for vosk and put in the same file
+3. download a <a href="https://alphacephei.com/vosk/models">language model</a> for vosk and put in the same file and rename it in model_small
 
 
 
