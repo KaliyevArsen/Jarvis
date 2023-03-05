@@ -47,6 +47,10 @@ To use Jarvis, you need to follow these steps:
 To use Jarvis, simply say "Hey Jarvis" followed by your command. For example, if you want to know the weather, say "Jarvis the weather".
 
 To view a list of available commands, say "Jarvis, what can you do?"
+  
+### If you are not Russian-speaking
+
+in "words.py" file translate the keys into your language 
 
 ## Contact
 
