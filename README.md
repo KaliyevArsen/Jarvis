@@ -39,10 +39,15 @@ To use Jarvis, you need to follow these steps:
 
 3. download a <a href="https://alphacephei.com/vosk/models">language model</a> for vosk and put in the same file and rename it in "model_small"
 
-4.
+4. API's
+
 - get <a href="https://openai.com/product">openAI</a> and <a href="https://openweathermap.org/api">openweathermap</a> API
 - put it in "skills.py" file (23, 105 lines)
 - also if not from Astana write your city in 107 and 114:21
+
+5. requirement files 
+
+- create a screenshots file and write the path to it(skills.py, 78)
 
 ## Usage
 
