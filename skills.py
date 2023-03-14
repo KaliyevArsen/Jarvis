@@ -7,6 +7,9 @@ import pyautogui
 import pyjokes
 import requests
 from googletrans import Translator
+from bs4 import BeautifulSoup
+import requests
+import random
 
 import voice
 
@@ -20,7 +23,7 @@ def browser():
 
 def question(a):
     print("Спрашиваю у chatGPT")
-    openai.api_key = "your API key"
+    openai.api_key = "yourAPI"
     model_engine = "text-davinci-003"
     prompt = a
 
@@ -36,7 +39,6 @@ def question(a):
         presence_penalty=0
     )
     voice.speaker(completion.choices[0].text)
-    
 
 
 def date():
@@ -61,6 +63,11 @@ def date():
 
     voice.speaker(date_str)
 
+def todo(task):
+    tasks = []
+    tasks.append(task)
+    print("Задача добавлена.")
+
 
 def joke():
     text = pyjokes.get_joke()
@@ -76,17 +83,29 @@ def screenshot():
     try:
         img = pyautogui.screenshot()
         img.save(
-            "C:\\Users\\user\\Desktop\\Jarvis\\screenshots\\ss.png"
+            "shot"
         )
         voice.speaker('Готово')
     except:
-        print("Проверьте правильность написания пути")
+        voice.speaker("Проверьте правильность написания пути")
 
 
 def vrema():
     Time = datetime.datetime.now().strftime("%H:%M")
     voice.speaker("сейчас")
     voice.speaker(Time)
+
+
+def latest_news(): # there can be your news site
+    url = 'https://tengrinews.kz/'
+    r = requests.get(url)
+    soup = BeautifulSoup(r.content, 'html.parser')
+    news_list = soup.find_all('a', class_='tn-link')
+    random_news = random.choice(news_list)
+    news_title = random_news.find('span', class_='tn-hidden').text.strip()
+    news_link = url + random_news['href']
+    print(f"{news_link}\n============================")
+    voice.speaker(news_title)
 
 
 def offpc():
@@ -102,7 +121,7 @@ def sleep():
 
 
 def weather():
-    api_key = "your API key"
+    api_key = "yourAPI"
     base_url = "http://api.openweathermap.org/data/2.5/weather?"
     city = "Astana"
     complete_url = f"{base_url}appid={api_key}&q={city}"
