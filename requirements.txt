@@ -1,9 +1,10 @@
+beautifulsoup4==4.11.2
 googletrans==3.1.0a0
 openai==0.26.5
 PyAutoGUI==0.9.53
 pyjokes==0.6.0
 pyttsx3==2.90
 requests==2.28.2
-scikit_learn==1.2.1
+scikit_learn==1.2.2
 sounddevice==0.4.6
 vosk==0.3.44
