@@ -28,7 +28,7 @@ To use Jarvis, you need to follow these steps:
 
 1. Clone this repository:
 <pre>
-    git clone https://github.com/programer3001/Jarvis.git
+    git clone (https://github.com/KaliyevArsen/Jarvis.git)
     cd Jarvis
 </pre>
 
